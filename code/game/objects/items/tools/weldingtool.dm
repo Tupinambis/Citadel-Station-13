@@ -390,4 +390,17 @@
 		reagents.add_reagent(/datum/reagent/fuel, 1)
 	..()
 
+/obj/item/weldingtool/ascent
+	name = "mantid welding arm"
+	desc = "An electrical cutting torch of Ascent design."
+	icon_state = "ascentwelder"
+	toolspeed = 0.15
+	light_intensity = 0
+	change_icons = 0
+
+/obj/item/weldingtool/ascent/process()
+	if(get_fuel() <= max_fuel)
+		reagents.add_reagent(/datum/reagent/fuel, 1)
+	..()
+
 #undef WELDER_FUEL_BURN_INTERVAL

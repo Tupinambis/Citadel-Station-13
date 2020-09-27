@@ -404,6 +404,13 @@
 	name = "ipc eyes"
 	icon_state = "cybernetic_eyeballs"
 
+/obj/item/organ/eyes/kharmaani
+	name = "compound ocelli"
+	icon_state = "kharmaani_eyes"
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+	flash_protect = -2
+	see_in_dark = 8
+
 #undef BLURRY_VISION_ONE
 #undef BLURRY_VISION_TWO
 #undef BLIND_VISION_THREE

@@ -271,3 +271,8 @@
 	icon_state = "clockitool"
 	toolspeed = 0.2
 
+/obj/item/multitool/ascent 
+	name = "mantid integrated multitool"
+	desc = "A limited-sentience integrated multitool capable of interfacing with any number of systems."
+	icon_state = "ascentmultitool"
+	toolspeed = 0.15

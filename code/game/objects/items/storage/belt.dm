@@ -123,6 +123,45 @@
 	new /obj/item/multitool/advanced/brass(src)
 	new /obj/item/stack/cable_coil(src, 30, "yellow")
 
+/obj/item/storage/belt/ascent
+	name = "mantid gear harness"
+	desc = "A complex tangle of articulated cables and straps."
+	icon_state = "ascent_harness"
+	item_state = "ascent_harness"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_OCLOTHING
+
+/obj/item/storage/belt/ascent/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 6
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.can_hold = typecacheof(list(
+		/obj/item/crowbar,
+		/obj/item/screwdriver,
+		/obj/item/weldingtool,
+		/obj/item/wirecutters,
+		/obj/item/wrench,
+		/obj/item/multitool,
+		/obj/item/flashlight,
+		/obj/item/stack/cable_coil,
+		/obj/item/t_scanner,
+		/obj/item/analyzer,
+		/obj/item/geiger_counter,
+		/obj/item/extinguisher/mini,
+		/obj/item/radio,
+		/obj/item/clothing/gloves,
+		/obj/item/holosign_creator,
+		/obj/item/forcefield_projector,
+		/obj/item/assembly/signaler
+		))
+
+/obj/item/storage/belt/ascent/PopulateContents()
+	new /obj/item/screwdriver/ascent(src)
+	new /obj/item/crowbar/ascent(src)
+	new /obj/item/weldingtool/ascent(src)
+	new /obj/item/multitool/ascent(src)
+	new /obj/item/stack/cable_coil/cyan(src)
+
 /obj/item/storage/belt/medical
 	name = "medical belt"
 	desc = "Can hold various medical equipment."

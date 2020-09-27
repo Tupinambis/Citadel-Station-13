@@ -105,3 +105,17 @@
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	icon_state = "crowbar"
 	toolspeed = 0.2
+
+/obj/item/crowbar/ascent
+	name = "mantid clustertool"
+	desc = "A complex assembly of self-guiding, modular heads capable of performing most manual tasks."
+	icon_state = "clustertool_crowbar"
+	toolspeed = 0.15
+
+/obj/item/crowbar/ascent/attack_self(mob/user)
+	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, 1)
+	var/obj/item/wirecutters/ascent/bugcutters = new /obj/item/wirecutters/ascent(drop_location())
+	bugcutters.name = name
+	to_chat(user, "<span class='notice'>You switch the clustertool to wirecutter mode.</span>")
+	qdel(src)
+	user.put_in_active_hand(bugcutters)

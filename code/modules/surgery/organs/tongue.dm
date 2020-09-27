@@ -258,3 +258,26 @@
 /obj/item/organ/tongue/ethereal/Initialize(mapload)
 	. = ..()
 	languages_possible = languages_possible_ethereal
+
+/obj/item/organ/tongue/kharmaani
+	name = "kharmaani mouthparts"
+	desc = "A complex collection of insectoid mouthparts."
+	icon_state = "tonguexeno" //TODO: MANDIBLE SPRITE
+	say_mod = "clicks"
+	attack_verb = list("bit", "pinced", "chewed")
+	taste_sensitivity = 10 //Not a tongue but they still taste in other ways
+	maxHealth = 80 //Robust exoskeleton
+	var/static/list/languages_possible_kharmaani = typecacheof(list(
+		/datum/language/ascent_voc,
+		/datum/language/xenocommon,
+		/datum/language/common,
+		/datum/language/codespeak,
+		/datum/language/slime,
+		/datum/language/draconic,
+		/datum/language/voltaic,
+		/datum/language/ratvar,
+		/datum/language/narsie))
+
+/obj/item/organ/tongue/kharmaani/Initialize(mapload)
+	. = ..()
+	languages_possible = languages_possible_kharmaani

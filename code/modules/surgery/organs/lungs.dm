@@ -612,3 +612,13 @@
 	. = ..()
 	if(.)
 		applyOrganDamage(2) //Yamerol lungs are temporary
+
+/obj/item/organ/lungs/kharmaani
+	name = "spiracle junction"
+	icon_state = "lungs-k"
+	safe_oxygen_min = 0
+	safe_oxygen_max = 0
+	safe_ch3br_min = 13
+	safe_ch3br_max = 50
+
+	maxHealth = 400

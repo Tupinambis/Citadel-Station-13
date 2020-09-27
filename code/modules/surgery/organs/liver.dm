@@ -117,3 +117,10 @@
 			damage+=100
 		if(2)
 			damage+=50
+
+/obj/item/organ/liver/kharmaani
+	name = "primary filters"
+	icon_state = "liver-k"
+	maxHealth = 1.1 * STANDARD_ORGAN_THRESHOLD
+	toxTolerance = 5
+	toxLethality = 0.008

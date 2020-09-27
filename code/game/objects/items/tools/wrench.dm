@@ -126,3 +126,16 @@
 	icon_state = "wrench"
 	usesound = 'sound/effects/empulse.ogg'
 	toolspeed = 0.2
+
+/obj/item/wrench/ascent
+	name = "mantid clustertool"
+	desc = "A complex assembly of self-guiding, modular heads capable of performing most manual tasks."
+	icon_state = "clustertool_wrench"
+	toolspeed = 0.15
+
+/obj/item/wrench/ascent/attack_self(mob/user)
+	playsound(get_turf(user),'sound/items/change_jaws.ogg',50,1)
+	var/obj/item/wirecutters/ascent/bugscrew = new /obj/item/screwdriver/ascent(drop_location())
+	to_chat(user, "<span class='notice'>You switch the clustertool to screwdriver mode.</span>")
+	qdel(src)
+	user.put_in_active_hand(bugscrew)

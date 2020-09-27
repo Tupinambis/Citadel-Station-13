@@ -146,3 +146,18 @@
 	icon_state = "cutters"
 	toolspeed = 0.2
 	random_color = FALSE
+
+/obj/item/wirecutters/ascent
+	name = "mantid clustertool"
+	desc = "A complex assembly of self-guiding, modular heads capable of performing most manual tasks."
+	icon_state = "clustertool_wirecutter"
+	toolspeed = 0.15
+	random_color = FALSE
+
+/obj/item/wirecutters/ascent/attack_self(mob/user)
+	playsound(get_turf(user),'sound/items/change_jaws.ogg',50,1)
+	var/obj/item/wrench/ascent/bugwrench = new /obj/item/wrench/ascent(drop_location())
+	bugwrench.name = name
+	to_chat(user, "<span class='notice'>You switch the clustertool to wrench mode.</span>")
+	qdel(src)
+	user.put_in_active_hand(bugwrench)

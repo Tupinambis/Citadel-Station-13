@@ -62,6 +62,14 @@
 	if(istype(L))
 		attack_self(L)
 
+/obj/item/clothing/shoes/magboots/ascent
+	name = "ascent magclaws"
+	desc = "A pair of advanced lightweight magnetic claws of ascent design."
+	icon_state = "ascent_magboots0"
+	magboot_state = "ascent_magboots"
+	slowdown_active = 0
+	species_restricted = list("Kharmaani Alate","Kharmaani Gyne")
+
 /obj/item/clothing/shoes/magboots/paramedic
 	desc = "A pair of magboots decked in colors matching the equipment of an emergency medical technician."
 	name = "paramedic magboots"

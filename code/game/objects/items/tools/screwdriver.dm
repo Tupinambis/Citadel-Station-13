@@ -159,3 +159,17 @@
 	usesound = 'sound/items/pshoom.ogg'
 	toolspeed = 0.2
 	random_color = FALSE
+
+/obj/item/screwdriver/ascent
+	name = "mantid clustertool"
+	desc = "A complex assembly of self-guiding, modular heads capable of performing most manual tasks."
+	icon_state = "clustertool_screwdriver"
+	toolspeed = 0.15
+	random_color = FALSE
+
+/obj/item/screwdriver/ascent/attack_self(mob/user)
+	playsound(get_turf(user),'sound/items/change_jaws.ogg',50,1)
+	var/obj/item/crowbar/ascent/bugpry = new /obj/item/crowbar/ascent(drop_location())
+	to_chat(user, "<span class='notice'>You switch the clustertool to prying mode.</span>")
+	qdel(src)
+	user.put_in_active_hand(bugpry)

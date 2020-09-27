@@ -584,6 +584,32 @@
 	. = ..()
 	allowed = GLOB.security_hardsuit_allowed
 
+	//Ascent
+/obj/item/clothing/head/helmet/space/hardsuit/ascent 
+	name = "ascent exohelmet"
+	icon_state = "hardsuit0-ascent"
+	item_state = "hardsuit0-ascent"
+	hardsuit_type = "ascent"
+	armor = list("melee" = 50, "bullet" = 25, "laser" = 30, "energy" = 30, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 15)
+	resistance_flags = ACID_PROOF | FIRE_PROOF
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+
+/obj/item/clothing/head/helmet/space/hardsuit/ascent/attack_self()
+	return //Preferably toggleable thermals
+
+/obj/item/clothing/suit/space/hardsuit/ascent 
+	name = "ascent exosuit"
+	desc = "an exosuit of ascent design that protects against nearly every hazardous environment that can be encountered in space."
+	icon_state = "hardsuit-ascent"
+	item_state = "hardsuit-ascent"
+	slowdown = 0
+	armor = list("melee" = 50, "bullet" = 25, "laser" = 30, "energy" = 30, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 15)
+	resistance_flags = ACID_PROOF | FIRE_PROOF
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ascent
+	jetpack = /obj/item/tank/jetpack/suit
+	species_restricted = list("Kharmaani Alate","Kharmaani Gyne")
+	
 	//Clown
 /obj/item/clothing/head/helmet/space/hardsuit/clown
 	name = "cosmohonk hardsuit helmet"

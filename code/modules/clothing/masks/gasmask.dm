@@ -244,3 +244,13 @@
 	item_state = "hunter"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
+
+/obj/item/clothing/mask/gas/ascent
+	name = "mantid facemask"
+	desc = "An alien facemask with chunky gas filters and a breathing valve."
+	icon_state = "ascentmask"
+	item_state = "ascentmask"
+	w_class = WEIGHT_CLASS_SMALL
+	flags_inv = HIDEFACIALHAIR|HIDEFACE
+	flags_cover = MASKCOVERSMOUTH
+	species_restricted = list("Kharmaani Alate","Kharmaani Gyne")

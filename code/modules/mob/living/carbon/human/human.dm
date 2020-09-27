@@ -1255,3 +1255,9 @@
 
 /mob/living/carbon/human/species/roundstartslime
 	race = /datum/species/jelly/roundstartslime
+
+/mob/living/carbon/human/species/kharmaani
+	race = /datum/species/kharmaani
+
+/mob/living/carbon/human/species/kharmaani/gyne
+	race = /datum/species/kharmaani/gyne

@@ -124,3 +124,7 @@
 
 /obj/item/organ/stomach/ethereal/proc/adjust_charge(amount)
 	crystal_charge = clamp(crystal_charge + amount, ETHEREAL_CHARGE_NONE, ETHEREAL_CHARGE_DANGEROUS)
+
+/obj/item/organ/stomach/kharmaani
+	name = "digestive sac"
+	icon_state = "stomach-k"

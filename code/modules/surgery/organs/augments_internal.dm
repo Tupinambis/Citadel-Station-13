@@ -139,3 +139,31 @@
 	if(prob(60/severity))
 		to_chat(owner, "<span class='warning'>Your breathing tube suddenly closes!</span>")
 		owner.losebreath += 2
+
+//check saymode.dm for message handling
+/obj/item/organ/controller
+	name = "system controller"
+	desc = "A fist-sized lump of complex circuitry."
+	icon_state = "controller"
+	zone = BODY_ZONE_CHEST
+	slot = "controller"
+
+/mob/living/proc/controller_talk(message, shown_name = real_name)
+	src.log_talk(message, LOG_SAY)
+	message = trim(message)
+	if(!message)
+		return
+
+	var/message_a = say_quote(message)
+	var/rendered = "<i>Worldnet, <span class='name'>[shown_name]</span> <span class='message'>[message_a]</span></i>"
+	for(var/mob/S in GLOB.player_list)
+		if(!S.stat && S.controllercheck())
+			to_chat(S, rendered)
+		if(S in GLOB.dead_mob_list)
+			var/link = FOLLOW_LINK(S, src)
+			to_chat(S, "[link] [rendered]")
+
+/mob/living/carbon/controllercheck()
+	var/obj/item/organ/controller/A = getorgan(/obj/item/organ/controller)
+	if(A)
+		return A

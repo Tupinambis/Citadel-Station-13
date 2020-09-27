@@ -247,3 +247,8 @@ obj/item/organ/heart/cybernetic/upgraded/on_life()
 		owner.heal_overall_damage(15, 15)
 		if(owner.reagents.get_reagent_amount(/datum/reagent/medicine/ephedrine) < 20)
 			owner.reagents.add_reagent(/datum/reagent/medicine/ephedrine, 10)
+
+/obj/item/organ/heart/kharmaani
+	name = "hemolymph pump"
+	icon_state = "heart-kharmaani-on"
+	maxHealth = 1.1 * STANDARD_ORGAN_THRESHOLD
